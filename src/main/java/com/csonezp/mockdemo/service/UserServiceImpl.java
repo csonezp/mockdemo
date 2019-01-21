@@ -6,6 +6,7 @@ import com.csonezp.mockdemo.dao.UserDao;
 import com.csonezp.mockdemo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 /**
  * @author zhangpeng34
@@ -24,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User addUser(String name) {
+        if(StringUtils.isEmpty(name)){
+            return null;
+        }
         User user = new User();
         user.setName(name);
         return userDao.save(user);

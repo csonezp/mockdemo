@@ -52,10 +52,19 @@ public class UserServiceTests {
         Mockito.when(userDao.save(any(User.class)))
                 .thenReturn(user);
     }
+    //正向流程
     @Test
     public void testAddUser(){
         User user = UserServiceImpl.addUser(addUserName);
         Assert.assertEquals(addUserName,user.getName());
         Assert.assertEquals(1L,user.getId().longValue());
     }
+    //异常分支，name为null
+    @Test
+    public void testAddUserNull(){
+        User user = UserServiceImpl.addUser(null);
+        Assert.assertEquals(null,user);
+    }
+    //将各个分支都写出test和assert
+    //............
 }
