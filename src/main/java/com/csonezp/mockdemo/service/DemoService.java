@@ -38,4 +38,27 @@ public class DemoService {
 
         return res;
     }
+
+    public Integer fun3(Integer a, Integer b, Integer x) {
+
+        if (a > 1 && b == 0) {
+            x += a;
+        }
+        if (a == 2 || x > 1) {
+            x += 1;
+        }
+        return x;
+    }
+
+    public Integer fun4(Integer a, Integer b, Integer x) {
+
+        if (a > 1 || b == 0) {
+            x += a;
+        }
+        if (a == 2 || x > 1) {
+            x += 1;
+        }
+        return x;
+    }
+
 }

@@ -158,4 +158,41 @@ public class DemoServiceTest {
         Assert.assertEquals(2,res);
     }
 
+    @Test
+    public void testFun3StatementCoverage(){
+        Integer res = demoService.fun3(2,0,3);
+        Assert.assertEquals(6,res.intValue());
+    }
+
+    @Test
+    public void testFun3DecisionCoverage(){
+        Integer res = demoService.fun3(2,0,1);
+        Assert.assertEquals(4,res.intValue());
+        res = demoService.fun3(3,1,1);
+        Assert.assertEquals(1,res.intValue());
+    }
+
+    @Test
+    public void testFun3ConditionCoverage(){
+        Integer res = demoService.fun3(2,0,3);
+        Assert.assertEquals(6,res.intValue());
+        res = demoService.fun3(0,1,0);
+        Assert.assertEquals(0,res.intValue());
+    }
+
+    @Test
+    public void testFun3PathCoverage(){
+        Integer res = demoService.fun3(0,1,0);
+        Assert.assertEquals(0,res.intValue());
+
+        res = demoService.fun3(3,0,-3);
+        Assert.assertEquals(0,res.intValue());
+        res = demoService.fun3(2,1,3);
+        Assert.assertEquals(4,res.intValue());
+
+        res = demoService.fun3(2,0,3);
+        Assert.assertEquals(6,res.intValue());
+
+    }
+
 }
